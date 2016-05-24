@@ -16,7 +16,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    _mapManager = [[BMKMapManager alloc]init];
+    BOOL ret = [_mapManager start:@"vsydf257xSgtVvn5IwbnoUKNhn7MRWeG" generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"引擎启动失败");
+    }
+    
     return YES;
 }
 
